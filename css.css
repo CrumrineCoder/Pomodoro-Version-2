@@ -1,0 +1,38 @@
+.container{
+  display: inline-block;
+  padding: 10px 10px 0 10px; 
+}
+button:focus {outline:0;}
+#ultimateContainer{
+  margin: 0 auto; 
+  width: 50%;
+  text-align: center; 
+}
+
+#myProgress {
+    width: 100%;
+    background-color: #7F2E32;
+}
+#myBar {
+    width: 0%;
+    height: 30px;
+    background-color: #FF5B64;
+}
+body {
+  background: #70060C; 
+  color: white; 
+  font-family: 'Bellefair', serif; 
+}
+
+button{
+ background: #FF0E1B; 
+   text-decoration: none;
+  border: none;
+   color: white; 
+  font-family: 'Bellefair', serif; 
+}
+button:hover {background-color: #CC0B16}
+#special{
+  width: 20px; 
+  height: 20px; 
+}
