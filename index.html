@@ -12,12 +12,69 @@ Time gone by:  <p id="timeGoneBy"> </p>
 <button id="play" onclick="togglePause()" style="display: none;"> Play </button>
 <button id="reset" onclick="reset()" style="display: none;"> Reset </button> 
 <br />
-Session Length: <p id="sessionLength"> </p>
+Session Length: <p id="session"> </p>
 
 <div id="sessionButtons">
 	<button onclick="changeTimer('session')"> Session </button>
 	<button onclick="changeTimer('short')"> Short Break </button>
 	<button onclick="changeTimer('long')"> Long Break </button>
 </div>
+
+<div class="container"> 
+<p> Session Length </p>
+<span id="sessionDisplay">00:25:00</span>
+<p> Minute </p>
+<button onclick="changeTime(-600,'session')"> -10 </button>
+<button onclick="changeTime(-300,'session')"> -5 </button>
+<button onclick="changeTime(-60,'session')"> -1 </button>
+<button onclick="changeTime(+60,'session')"> +1 </button>
+<button onclick="changeTime(+300,'session')"> +5 </button>
+<button onclick="changeTime(+600,'session')"> +10 </button>
+<p> Second </p>
+<button onclick="changeTime(-10,'session')"> -10 </button>
+<button onclick="changeTime(-5,'session')"> -5 </button>
+<button onclick="changeTime(-1,'session')"> -1 </button>
+<button onclick="changeTime(+1,'session')"> +1 </button>
+<button onclick="changeTime(+5,'session')"> +5 </button>
+<button onclick="changeTime(+10,'session')"> +10 </button>
+</div>
+<div class="container">
+<p> Short Break Length </p>
+<span id="shortBreakDisplay">00:05:00</span>
+<p> Minute </p>
+<button onclick="changeTime(-600,'shortBreak')"> -10 </button>
+<button onclick="changeTime(-300,'shortBreak')"> -5 </button>
+<button onclick="changeTime(-60,'shortBreak')"> -1 </button>
+<button onclick="changeTime(+60,'shortBreak')"> +1 </button>
+<button onclick="changeTime(+300,'shortBreak')"> +5 </button>
+<button onclick="changeTime(+600,'shortBreak')"> +10 </button>
+<p> Second </p>
+<button onclick="changeTime(-10,'shortBreak')"> -10 </button>
+<button onclick="changeTime(-5,'shortBreak')"> -5 </button>
+<button onclick="changeTime(-1,'shortBreak')"> -1 </button>
+<button onclick="changeTime(+1,'shortBreak')"> +1 </button>
+<button onclick="changeTime(+5,'shortBreak')"> +5 </button>
+<button onclick="changeTime(+10,'shortBreak')"> +10 </button>
+</div>
+<div class="container">
+<p> Long Break Length </p>
+<span id="longBreakDisplay">00:15:00</span>
+<p> Minute </p>
+<button onclick="changeTime(-600,'longBreak')"> -10 </button>
+<button onclick="changeTime(-300, 'longBreak')"> -5 </button>
+<button onclick="changeTime(-60, 'longBreak')"> -1 </button>
+<button onclick="changeTime(+60, 'longBreak')"> +1 </button>
+<button onclick="changeTime(+300, 'longBreak')"> +5 </button>
+<button onclick="changeTime(+600, 'longBreak')"> +10 </button>
+<p> Second </p>
+<button onclick="changeTime(-10, 'longBreak')"> -10 </button>
+<button onclick="changeTime(-5, 'longBreak')"> -5 </button>
+<button onclick="changeTime(-1, 'longBreak')"> -1 </button>
+<button onclick="changeTime(+1, 'longBreak')"> +1 </button>
+<button onclick="changeTime(+5, 'longBreak')"> +5 </button>
+<button onclick="changeTime(+10, 'longBreak')"> +10 </button>
+</div>
+
+
  <script type="text/javascript" src="data.js"></script>
 </body> 

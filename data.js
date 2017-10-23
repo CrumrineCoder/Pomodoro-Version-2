@@ -1,15 +1,15 @@
-var  shortBreakLength = 5; 
-var longBreakLength = 8; 
-var sessionLength = 10; 
+var  shortBreakLength = 300; 
+var longBreakLength = 600; 
+var sessionLength = 1500; 
 var paused = false; 
 var timeGoneBy = 0; 
-var currentTime = 10; 
+var currentTime = 1500; 
 
 // Create an interval where the timeGoneBy increases, the progress bar changes. 
 
 function timer(){
 	if(!paused){
-		document.getElementById("sessionLength").innerHTML = currentTime; 
+		document.getElementById("session").innerHTML = currentTime; 
 		timeGoneBy++; 
 		document.getElementById("timeGoneBy").innerHTML = timeGoneBy; 
 		if(timeGoneBy >= currentTime){
@@ -35,6 +35,7 @@ function toggleBreaksAndSession(){
 }
 
 function changeTimer(session){
+
 	if(session == "session"){
 		currentTime = sessionLength; 
 	}
@@ -80,5 +81,20 @@ function reset(){
 	}
 	timeGoneBy = 0; 
 	togglePause(); 
+}
 
+function changeTime(amount, session){
+		console.log(session); 
+	if(session = "session"){
+		sessionLength += amount; 
+	}
+	else if(session = "shortBreak"){
+		shortBreakLength += amount; 
+	}
+	else if(session = "longBreak"){
+		longBreakLength += amount; 
+	}
+	document.getElementById("sessionDisplay").innerHTML = sessionLength; 
+	document.getElementById("shortBreakDisplay").innerHTML = shortBreakLength; 
+	document.getElementById("longBreakDisplay").innerHTML = longBreakLength; 
 }

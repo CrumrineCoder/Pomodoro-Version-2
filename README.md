@@ -6,7 +6,7 @@
 4. Pause functionality. Probably just change the  pause var to true. [DONE] 
 4a. Play functionality. Probably just change the pause var to false. [DONE] 
 5. Reset functionality. Set timeChanged to 0. [DONE] 
-6. Buttons to change the length of the pomodoro session. 
+6. Buttons to change the length of the pomodoro session. [DONE]  
 
 7. Pomodoro animation. 
 8. Hide things and place things with CSS, etc. 
