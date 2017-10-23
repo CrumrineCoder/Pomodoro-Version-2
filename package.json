@@ -1,0 +1,22 @@
+{
+  "name": "pomodoro",
+  "version": "1.0.0",
+  "description": "1. Make the pomodoro timer clock down just based on the standard session length [DONE]  2. When the session ends, show the buttons for choosing session, short break, or long break [DONE]  3. Depending on which button was pressed, start up the timer again with a different duration. [DONE]  4. Pause functionality. Probably just change the  pause var to true. [DONE]  4a. Play functionality. Probably just change the pause var to false. [DONE]  5. Reset functionality. Set timeChanged to 0. [DONE]  6. Buttons to change the length of the pomodoro session. [DONE]",
+  "main": "data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrumrineCoder/Pomodoro-Version-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CrumrineCoder/Pomodoro-Version-2/issues"
+  },
+  "homepage": "https://github.com/CrumrineCoder/Pomodoro-Version-2#readme",
+  "dependencies": {
+    "progressbar.js": "^1.0.1"
+  }
+}

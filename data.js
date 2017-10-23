@@ -9,6 +9,7 @@ var currentTime = 1500;
 
 function timer(){
 	if(!paused){
+		
 		document.getElementById("session").innerHTML = currentTime; 
 		timeGoneBy++; 
 		document.getElementById("timeGoneBy").innerHTML = timeGoneBy; 
@@ -23,6 +24,7 @@ function timer(){
 	
 }
 var pomodoro = setInterval(timer, 1000); 
+
 
 toggleBreaksAndSession(); 
 function toggleBreaksAndSession(){
@@ -58,6 +60,7 @@ function togglePause(){
 	if(timeGoneBy == currentTime){
 		reset(); 
 	}
+	// Resume
 	else if(paused){
 		paused = false; 
 		document.getElementById("pause").style.display = "block"; 
@@ -65,12 +68,14 @@ function togglePause(){
 		document.getElementById("reset").style.display = "none"; 
 		toggleBreaksAndSession();
 	}
+	// Pause
 	else if(!paused){
 		paused = true; 
 		document.getElementById("pause").style.display = "none"; 
 		document.getElementById("play").style.display = "block"; 
 		document.getElementById("reset").style.display = "block"; 
 		toggleBreaksAndSession();
+		
 	}
 	
 }
@@ -84,6 +89,7 @@ function reset(){
 }
 
 function changeTime(amount, session){
+
 		console.log(session); 
 	if(session = "session"){
 		sessionLength += amount; 
@@ -98,3 +104,48 @@ function changeTime(amount, session){
 	document.getElementById("shortBreakDisplay").innerHTML = shortBreakLength; 
 	document.getElementById("longBreakDisplay").innerHTML = longBreakLength; 
 }
+
+
+
+
+
+
+
+
+var pomCircle = function() {
+   console.log("I BLEIEVE IN YOU"); 
+  $('.pomProgressTimer').circleProgress({
+    value: 1.0,
+    thickness: '25',
+    size: 50,
+    fill: {
+      color: '#FF6347',
+    },
+    animation: {
+      duration: 30000,
+    },
+  })
+  
+
+};
+
+$('#start-countdown').on('click', function() {
+	console.log("YAGOTO"); 
+  pomCircle();
+
+});
+
+$('#pause-countdown').on('click', function() {
+ var el = $('.pomProgressTimer');
+    $(el.circleProgress('widget')).stop();
+
+});
+
+$('#resume-countdown').on('click', function() {
+  var obj = $('.pomProgressTimer').data('circle-progress'),
+    progress = obj.lastFrameValue;
+    $('.pomProgressTimer').circleProgress({
+    animationStartValue: progress,
+  });
+
+});
