@@ -15,6 +15,9 @@ function timer(){
 		if(timeGoneBy >= currentTime){
 			paused = true; 
 			toggleBreaksAndSession(); 
+			document.getElementById("pause").style.display = "none"; 
+			document.getElementById("play").style.display = "none"; 
+			document.getElementById("reset").style.display = "block";
 		}
 	}
 	
@@ -48,4 +51,34 @@ function changeTimer(session){
 	paused = false; 
 	timeGoneBy = 0; 
 	toggleBreaksAndSession(); 
+}
+
+function togglePause(){
+	if(timeGoneBy == currentTime){
+		reset(); 
+	}
+	else if(paused){
+		paused = false; 
+		document.getElementById("pause").style.display = "block"; 
+		document.getElementById("play").style.display = "none"; 
+		document.getElementById("reset").style.display = "none"; 
+		toggleBreaksAndSession();
+	}
+	else if(!paused){
+		paused = true; 
+		document.getElementById("pause").style.display = "none"; 
+		document.getElementById("play").style.display = "block"; 
+		document.getElementById("reset").style.display = "block"; 
+		toggleBreaksAndSession();
+	}
+	
+}
+
+function reset(){
+	if(timeGoneBy == currentTime){
+		toggleBreaksAndSession(); 
+	}
+	timeGoneBy = 0; 
+	togglePause(); 
+
 }
