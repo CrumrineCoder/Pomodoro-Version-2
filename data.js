@@ -10,7 +10,6 @@ var newTimer = true;
 function timer(){
 	if(!paused){
 		if(newTimer){
-			console.log("Geneva Convention"); 
 			pomCircle(currentTime); 
 			newTimer = false; 
 		}
@@ -42,14 +41,12 @@ function toggleBreaksAndSession(){
 
 function changeTimer(session){
 	newTimer = true; 
-	 $('.pomProgressTimer').circleProgress(); 
+	 $('.pomProgressTimer').circleProgress({animationStartValue: 0}); 
 	if(session == "session"){
 		currentTime = sessionLength; 
 	}
 	else if(session == "short"){
-		console.log(currentTime); 
 		currentTime = shortBreakLength; 
-		console.log(currentTime); 
 	}
 	else if(session == "long"){
 		currentTime = longBreakLength; 
