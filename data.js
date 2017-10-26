@@ -118,9 +118,11 @@ function changeTime(amount, session){
 var pomCircle = function(durationTime) {
 
   $('.pomProgressTimer').circleProgress({
-    value: 1.0,
-    thickness: '25',
-    size: 50,
+    value: 1,
+    thickness: '3',
+	startAngle: -(Math.PI/2), 
+    size: 300,
+	lineCap: "round" , 
     fill: {
       color: '#FF6347',
     },

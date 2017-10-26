@@ -8,12 +8,7 @@
 5. Reset functionality. Set timeChanged to 0. [DONE] 
 6. Buttons to change the length of the pomodoro session. [DONE]  
 
-7. Pomodoro animation. 
-a. When the timer starts, a clock is made. [DONE]
-b. When the timer is reset, the clock is removed [DONE] 
-c. When the timer is paused, the clock is paused [DONE]
-d. When the timer resumes, the clock resumes. [DONE] 
-e. When a NEW timer starts either after the first runs out or before that, the former clock is removed and a new one is made. [DONE] 
+7. Pomodoro animation [DONE] 
 
 last. change the color so it's obvious there's a timer there
 8. Hide things and place things with CSS, etc. 
