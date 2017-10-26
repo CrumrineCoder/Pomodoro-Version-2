@@ -10,6 +10,7 @@ var newTimer = true;
 function timer(){
 	if(!paused){
 		if(newTimer){
+			console.log("Geneva Convention"); 
 			pomCircle(currentTime); 
 			newTimer = false; 
 		}
@@ -95,7 +96,7 @@ function reset(){
 		toggleBreaksAndSession(); 
 	}
 	newTimer = true; 
-	 $('.pomProgressTimer').circleProgress(); 
+	 $('.pomProgressTimer').circleProgress({animationStartValue: 0}); 
 	timeGoneBy = 0; 
 	togglePause(); 
 }
