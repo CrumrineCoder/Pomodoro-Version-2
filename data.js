@@ -1,15 +1,18 @@
 var  shortBreakLength = 300; 
 var longBreakLength = 600; 
-var sessionLength = 1500; 
+var sessionLength = 10; 
 var paused = false; 
 var timeGoneBy = 0; 
-var currentTime = 1500; 
-
+var currentTime = 10; 
+var newTimer = true; 
 // Create an interval where the timeGoneBy increases, the progress bar changes. 
 
 function timer(){
 	if(!paused){
-		
+		if(newTimer){
+			pomCircle(currentTime); 
+			newTimer = false; 
+		}
 		document.getElementById("session").innerHTML = currentTime; 
 		timeGoneBy++; 
 		document.getElementById("timeGoneBy").innerHTML = timeGoneBy; 
@@ -37,7 +40,8 @@ function toggleBreaksAndSession(){
 }
 
 function changeTimer(session){
-
+	newTimer = true; 
+	 $('.pomProgressTimer').circleProgress(); 
 	if(session == "session"){
 		currentTime = sessionLength; 
 	}
@@ -67,6 +71,11 @@ function togglePause(){
 		document.getElementById("play").style.display = "none"; 
 		document.getElementById("reset").style.display = "none"; 
 		toggleBreaksAndSession();
+		var obj = $('.pomProgressTimer').data('circle-progress'),
+			progress = obj.lastFrameValue;
+		$('.pomProgressTimer').circleProgress({
+			animationStartValue: progress,
+		});
 	}
 	// Pause
 	else if(!paused){
@@ -75,7 +84,8 @@ function togglePause(){
 		document.getElementById("play").style.display = "block"; 
 		document.getElementById("reset").style.display = "block"; 
 		toggleBreaksAndSession();
-		
+		var el = $('.pomProgressTimer');
+		$(el.circleProgress('widget')).stop();
 	}
 	
 }
@@ -84,13 +94,13 @@ function reset(){
 	if(timeGoneBy == currentTime){
 		toggleBreaksAndSession(); 
 	}
+	newTimer = true; 
+	 $('.pomProgressTimer').circleProgress(); 
 	timeGoneBy = 0; 
 	togglePause(); 
 }
 
 function changeTime(amount, session){
-
-		console.log(session); 
 	if(session = "session"){
 		sessionLength += amount; 
 	}
@@ -105,15 +115,8 @@ function changeTime(amount, session){
 	document.getElementById("longBreakDisplay").innerHTML = longBreakLength; 
 }
 
+var pomCircle = function(durationTime) {
 
-
-
-
-
-
-
-var pomCircle = function() {
-   console.log("I BLEIEVE IN YOU"); 
   $('.pomProgressTimer').circleProgress({
     value: 1.0,
     thickness: '25',
@@ -122,30 +125,10 @@ var pomCircle = function() {
       color: '#FF6347',
     },
     animation: {
-      duration: 30000,
+		// Is in milliseconds
+      duration: durationTime*1000,
     },
   })
   
 
 };
-
-$('#start-countdown').on('click', function() {
-	console.log("YAGOTO"); 
-  pomCircle();
-
-});
-
-$('#pause-countdown').on('click', function() {
- var el = $('.pomProgressTimer');
-    $(el.circleProgress('widget')).stop();
-
-});
-
-$('#resume-countdown').on('click', function() {
-  var obj = $('.pomProgressTimer').data('circle-progress'),
-    progress = obj.lastFrameValue;
-    $('.pomProgressTimer').circleProgress({
-    animationStartValue: progress,
-  });
-
-});
