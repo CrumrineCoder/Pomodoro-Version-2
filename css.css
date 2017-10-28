@@ -119,3 +119,12 @@ input[type="radio"]:checked + label{
 .container button{
 	font-size: 18px; 
 }
+
+@media screen and (max-width: 1000px) {
+	#CONT{
+		float: none; 
+		height: 200px; 
+		margin: 0 auto; 
+		margin-bottom: 10px; 
+	}
+}
