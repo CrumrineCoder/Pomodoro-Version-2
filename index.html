@@ -7,83 +7,61 @@
     <link rel="stylesheet" type="text/css" href="css.css" />
 </head>
  <body>
-  <div class="pomProgressTimer">
-  <br>
-  
-Time gone by:  <p id="timeGoneBy"> </p>
-<button id="pause" onclick="togglePause()" class="fa fa-pause-circle"> </button>
-<button id="play" onclick="togglePause()" style="display: none;"> Play </button>
-<button id="reset" onclick="reset()" style="display: none;"> Reset </button> 
-<br />
-Session Length: <p id="session"> </p>
-
-<div id="sessionButtons">
+ <div id="options">
+  <button class="fa fa-gear fa-2x"  onclick="toggleSettings()"> </button> 
+ </div>
+  <div id="timer">
+  <br />
+  <div id="sessionButtons"> Start a:
 	<button onclick="changeTimer('session')"> Session </button>
 	<button onclick="changeTimer('short')"> Short Break </button>
 	<button onclick="changeTimer('long')"> Long Break </button>
 </div>
 
+
+  <h1 id="timeLeft"> </h1> 
+	<div class="pomProgressTimer"> </div>
+  <div id="changeTimerButtons">
+<button id="pause" onclick="togglePause()" class="fa fa-pause-circle-o fa-3x"> </button>
+<button id="play" onclick="togglePause()" style="display: none;" class="fa fa-play-circle-o fa-3x">  </button>
+<button id="reset" onclick="reset()" style="display: none;" class="fa fa-undo fa-3x">  </button> 
+ </div>
+<br />
+
+
+</div>
+
+<div id="changeTimeContainer"> 
+
 <div class="container"> 
-<p> Session Length </p>
-<span id="sessionDisplay">00:25:00</span>
-<p> Minute </p>
-<button onclick="changeTime(-600,'session')"> -10 </button>
-<button onclick="changeTime(-300,'session')"> -5 </button>
-<button onclick="changeTime(-60,'session')"> -1 </button>
-<button onclick="changeTime(+60,'session')"> +1 </button>
-<button onclick="changeTime(+300,'session')"> +5 </button>
-<button onclick="changeTime(+600,'session')"> +10 </button>
-<p> Second </p>
-<button onclick="changeTime(-10,'session')"> -10 </button>
-<button onclick="changeTime(-5,'session')"> -5 </button>
-<button onclick="changeTime(-1,'session')"> -1 </button>
-<button onclick="changeTime(+1,'session')"> +1 </button>
-<button onclick="changeTime(+5,'session')"> +5 </button>
-<button onclick="changeTime(+10,'session')"> +10 </button>
-</div>
-<div class="container">
-<p> Short Break Length </p>
-<span id="shortBreakDisplay">00:05:00</span>
-<p> Minute </p>
-<button onclick="changeTime(-600,'shortBreak')"> -10 </button>
-<button onclick="changeTime(-300,'shortBreak')"> -5 </button>
-<button onclick="changeTime(-60,'shortBreak')"> -1 </button>
-<button onclick="changeTime(+60,'shortBreak')"> +1 </button>
-<button onclick="changeTime(+300,'shortBreak')"> +5 </button>
-<button onclick="changeTime(+600,'shortBreak')"> +10 </button>
-<p> Second </p>
-<button onclick="changeTime(-10,'shortBreak')"> -10 </button>
-<button onclick="changeTime(-5,'shortBreak')"> -5 </button>
-<button onclick="changeTime(-1,'shortBreak')"> -1 </button>
-<button onclick="changeTime(+1,'shortBreak')"> +1 </button>
-<button onclick="changeTime(+5,'shortBreak')"> +5 </button>
-<button onclick="changeTime(+10,'shortBreak')"> +10 </button>
-</div>
-<div class="container">
-<p> Long Break Length </p>
-<span id="longBreakDisplay">00:15:00</span>
-<p> Minute </p>
-<button onclick="changeTime(-600,'longBreak')"> -10 </button>
-<button onclick="changeTime(-300, 'longBreak')"> -5 </button>
-<button onclick="changeTime(-60, 'longBreak')"> -1 </button>
-<button onclick="changeTime(+60, 'longBreak')"> +1 </button>
-<button onclick="changeTime(+300, 'longBreak')"> +5 </button>
-<button onclick="changeTime(+600, 'longBreak')"> +10 </button>
-<p> Second </p>
-<button onclick="changeTime(-10, 'longBreak')"> -10 </button>
-<button onclick="changeTime(-5, 'longBreak')"> -5 </button>
-<button onclick="changeTime(-1, 'longBreak')"> -1 </button>
-<button onclick="changeTime(+1, 'longBreak')"> +1 </button>
-<button onclick="changeTime(+5, 'longBreak')"> +5 </button>
-<button onclick="changeTime(+10, 'longBreak')"> +10 </button>
+	<label for="sessionChange"  onclick = "toggleTimerSettings('session')"><input type="radio" id="sessionChange" name="timer">  Session </label>
+	<label for="shortBreakChange" onclick = "toggleTimerSettings('shortBreak')"><input type="radio" id="shortBreakChange"name="timer" >   Short Break </label>
+	 <label for="longBreakChange" onclick = "toggleTimerSettings('longBreak')"><input type="radio" id="longBreakChange" name="timer">   Long Break </label>
 </div>
 
+<br>
 
 <div class="container">
- 
-  </div>
+	<span id="display">00:25:00</span>
+	
+	<p> Minute </p>
+	<button onclick="changeTime(-600,'session')"> -10 </button>
+	<button onclick="changeTime(-300,'session')"> -5 </button>
+	<button onclick="changeTime(-60,'session')"> -1 </button>
+	<button onclick="changeTime(+60,'session')"> +1 </button>
+	<button onclick="changeTime(+300,'session')"> +5 </button>
+	<button onclick="changeTime(+600,'session')"> +10 </button>
+	
+	<p> Second </p>
+	<button onclick="changeTime(-10,'session')"> -10 </button>
+	<button onclick="changeTime(-5,'session')"> -5 </button>
+	<button onclick="changeTime(-1,'session')"> -1 </button>
+	<button onclick="changeTime(+1,'session')"> +1 </button>
+	<button onclick="changeTime(+5,'session')"> +5 </button>
+	<button onclick="changeTime(+10,'session')"> +10 </button>
+</div>
 
-
+</div>
 
 
  <script type="text/javascript" src=" https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

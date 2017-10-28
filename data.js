@@ -1,21 +1,21 @@
 var  shortBreakLength = 300; 
 var longBreakLength = 600; 
-var sessionLength = 10; 
+var sessionLength = 1500; 
 var paused = false; 
 var timeGoneBy = 0; 
-var currentTime = 10; 
+var currentTime = 1500; 
 var newTimer = true; 
 // Create an interval where the timeGoneBy increases, the progress bar changes. 
 
 function timer(){
+	document.getElementById("timeLeft").innerHTML = currentTime - timeGoneBy;  
 	if(!paused){
 		if(newTimer){
 			pomCircle(currentTime); 
 			newTimer = false; 
 		}
-		document.getElementById("session").innerHTML = currentTime; 
+		
 		timeGoneBy++; 
-		document.getElementById("timeGoneBy").innerHTML = timeGoneBy; 
 		if(timeGoneBy >= currentTime){
 			paused = true; 
 			toggleBreaksAndSession(); 
@@ -39,6 +39,25 @@ function toggleBreaksAndSession(){
     }
 }
 
+function toggleSettings(){
+	var x = document.getElementById("changeTimeContainer");
+	var left = document.getElementById("timer"); 
+    if (x.style.display === "none") {
+        x.style.display = "block";
+		left.style.float = "left"; 
+		left.style.width = "70%"; 
+    } else {
+        x.style.display = "none";
+		left.style.float = "none"; 
+		left.style.width = "100%"; 
+    }
+}
+
+function toggleTimerSettings(sesh){
+	
+}
+
+toggleSettings(); 
 function changeTimer(session){
 	newTimer = true; 
 	 $('.pomProgressTimer').circleProgress({animationStartValue: 0}); 
@@ -53,9 +72,9 @@ function changeTimer(session){
 	} else{
 		console.log("Error!"); 
 	} 
-	paused = false; 
+	togglePause(); 
 	timeGoneBy = 0; 
-	toggleBreaksAndSession(); 
+//	toggleBreaksAndSession(); 
 }
 
 function togglePause(){
@@ -72,7 +91,7 @@ function togglePause(){
 		var obj = $('.pomProgressTimer').data('circle-progress'),
 			progress = obj.lastFrameValue;
 		$('.pomProgressTimer').circleProgress({
-			animationStartValue: progress,
+			animationStartValue: progress
 		});
 	}
 	// Pause
@@ -84,6 +103,7 @@ function togglePause(){
 		toggleBreaksAndSession();
 		var el = $('.pomProgressTimer');
 		$(el.circleProgress('widget')).stop();
+
 	}
 	
 }
@@ -129,6 +149,4 @@ var pomCircle = function(durationTime) {
       duration: durationTime*1000,
     },
   })
-  
-
 };

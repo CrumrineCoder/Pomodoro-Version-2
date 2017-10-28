@@ -1,43 +1,92 @@
+/* Entire Document */
 .container{
   display: inline-block;
   padding: 10px 10px 0 10px; 
 }
-button:focus {outline:0;}
-#ultimateContainer{
-  margin: 0 auto; 
-  width: 50%;
-  text-align: center; 
+
+input[type="radio"] {
+  display: none;
 }
 
-#myProgress {
-    width: 100%;
-    background-color: #7F2E32;
-}
-#myBar {
-    width: 0%;
-    height: 30px;
-    background-color: #FF5B64;
-}
+button:focus {outline:0;}
+
 body {
   background: #70060C; 
   color: white; 
   font-family: 'Bellefair', serif; 
+  	text-align: center; 
 }
 
 button{
- background: #FF0E1B; 
-   text-decoration: none;
-  border: none;
-   color: white; 
-  font-family: 'Bellefair', serif; 
+	border: none;
+	  color: white;
+	   font-family: 'Bellefair', serif; 
+	      text-decoration: none;
 }
-button:hover {background-color: #CC0B16}
-#special{
-  width: 20px; 
-  height: 20px; 
+#sessionButtons button{
+ background: #FF0E1B; 
+
+  
+ 
+}
+sessionButtons button:hover {
+	background-color: #CC0B16
 }
 
-#pomProgressTimer canvas {
+/* Button & its buttons */
+
+
+#options button{
+	background: #70060C;
+	color: #FF0E1B; 
+	float: right; 
+}
+
+#options button:hover{
+	color: #CC0B16; 
+}
+
+
+
+.pomProgressTimer canvas {
 	 max-width: 100%;
     max-height: 100%;
 }
+
+#pause, #reset, #play {
+	background: #70060C;
+	color: #FF0E1B; 
+	margin: 0 auto; 
+}
+
+#pause:hover, #reset:hover, #play:hover{
+	color: #CC0B16; 
+}
+
+#sessionButtons button{
+	font-size: 16px; 
+	padding: 5px 5% 5px 5%; 
+}
+
+/* Change Time Settings */
+
+
+#changeTimeContainer{
+	display: none; 
+	float: right; 
+}
+
+
+label{
+	 	 background: #FF7078;  
+ }
+ 
+ 
+label:hover{
+		background: #FF0E1B; 
+  }
+  
+input[type="radio"]:checked + label {
+	width: 100%; 
+	  background: #CC0B16; 
+  } 
