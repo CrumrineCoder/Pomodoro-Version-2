@@ -41,15 +41,13 @@ function toggleBreaksAndSession(){
 
 function toggleSettings(){
 	var x = document.getElementById("changeTimeContainer");
-	var left = document.getElementById("timer"); 
+var y = document.getElementById("CONT");
     if (x.style.display === "none") {
         x.style.display = "block";
-		left.style.float = "left"; 
-		left.style.width = "70%"; 
-    } else {
+		 y.style.display = "block";
+	   } else {
         x.style.display = "none";
-		left.style.float = "none"; 
-		left.style.width = "100%"; 
+		 y.style.display = "none";
     }
 }
 
