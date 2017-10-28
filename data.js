@@ -5,10 +5,12 @@ var paused = false;
 var timeGoneBy = 0; 
 var currentTime = 1500; 
 var newTimer = true; 
+
+var setting = "session"; 
 // Create an interval where the timeGoneBy increases, the progress bar changes. 
 
 function timer(){
-	document.getElementById("timeLeft").innerHTML = currentTime - timeGoneBy;  
+	document.getElementById("timeLeft").innerHTML = convertTime(currentTime - timeGoneBy);  
 	if(!paused){
 		if(newTimer){
 			pomCircle(currentTime); 
@@ -52,7 +54,73 @@ var y = document.getElementById("CONT");
 }
 
 function toggleTimerSettings(sesh){
-	
+	setting = sesh; 
+	if (sesh == "session"){
+		 document.getElementById("display").innerHTML = convertTime(sessionLength); 
+	} else if(sesh == "longBreak"){
+		 document.getElementById("display").innerHTML = convertTime(longBreakLength);
+	}
+	else{
+		document.getElementById("display").innerHTML = convertTime(shortBreakLength);
+	}
+}
+
+function changeTime(amount) {
+    if (setting == "session") {
+        var temp = sessionLength + amount;
+        if (temp <= 0) {
+            sessionLength = 0;
+        } else {
+            sessionLength += amount;
+        }
+        document.getElementById("display").innerHTML = convertTime(sessionLength);
+    } else if (setting == "longBreak") {
+        var temp = longBreakLength + amount;
+        if (temp <= 0) {
+            longBreakLength = 0;
+        } else {
+            longBreakLength += amount;
+        }
+        document.getElementById("display").innerHTML = convertTime(longBreakLength);
+    } else {
+        var temp = shortBreakLength + amount;
+        if (temp <= 0) {
+            shortBreakLength = 0;
+        } else {
+            shortBreakLength += amount;
+        }
+        document.getElementById("display").innerHTML = convertTime(shortBreakLength);
+    }
+
+}
+
+function convertTime(trueSeconds) {
+    var hours = 0;
+    var minutes = 0;
+    var seconds = 0;
+    while (trueSeconds >= 3600) {
+        hours += 1;
+        trueSeconds -= 3600;
+    }
+    while (trueSeconds >= 60) {
+        minutes += 1;
+        trueSeconds -= 60;
+    }
+
+    seconds = trueSeconds;
+
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+
+    var formattedTime = hours + ":" + minutes + ":" + seconds;
+    return formattedTime;
 }
 
 toggleSettings(); 
@@ -114,21 +182,6 @@ function reset(){
 	 $('.pomProgressTimer').circleProgress({animationStartValue: 0}); 
 	timeGoneBy = 0; 
 	togglePause(); 
-}
-
-function changeTime(amount, session){
-	if(session = "session"){
-		sessionLength += amount; 
-	}
-	else if(session = "shortBreak"){
-		shortBreakLength += amount; 
-	}
-	else if(session = "longBreak"){
-		longBreakLength += amount; 
-	}
-	document.getElementById("sessionDisplay").innerHTML = sessionLength; 
-	document.getElementById("shortBreakDisplay").innerHTML = shortBreakLength; 
-	document.getElementById("longBreakDisplay").innerHTML = longBreakLength; 
 }
 
 var pomCircle = function(durationTime) {

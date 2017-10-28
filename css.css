@@ -71,7 +71,7 @@ sessionButtons button:hover {
 
 
 #changeTimeContainer{
-	width: 309px; 
+	width: 308px; 
 	display: none; 
 	float: right; 
 	padding: 0px; 
@@ -93,7 +93,7 @@ label, #changeTimeContainer button{
 
 #CONT{
 	height: 700px;  
-width: 309px; 
+width: 308px; 
 float: right; 	
 display: none; 
 }
