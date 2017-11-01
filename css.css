@@ -7,15 +7,38 @@ padding-top: 5px;
    padding-bottom: 10px; 
    }
 
-
-button:focus {outline:0;}
-
 body {
   background: #70060C; 
   color: white; 
   font-family: 'Bellefair', serif; 
   	text-align: center; 
+	margin: 0; 
 }
+/* Nav */
+
+nav {
+  background: black;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  width: 100%;
+  font-family: sans-serif;
+  font-family: "Circle", Verdana, Tahoma;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#nic {
+  color: #40CC33;
+  text-decoration: none;
+}
+
+#nic:hover {
+  color: #4A9943;
+}
+
+/* Button & its buttons */
+
+button:focus {outline:0;}
 
 button{
 	border: none;
@@ -26,15 +49,10 @@ button{
 #sessionButtons button{
  background: #FF0E1B; 
 
-  
- 
 }
 sessionButtons button:hover {
 	background-color: #CC0B16
 }
-
-/* Button & its buttons */
-
 
 #options button{
 	background: #70060C;
