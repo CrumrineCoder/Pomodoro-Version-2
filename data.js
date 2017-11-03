@@ -175,9 +175,6 @@ function togglePause(){
 }
 
 function reset(){
-	if(timeGoneBy == currentTime){
-		toggleBreaksAndSession(); 
-	}
 	newTimer = true; 
 	 $('.pomProgressTimer').circleProgress({animationStartValue: 0}); 
 	timeGoneBy = 0; 
