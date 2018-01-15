@@ -1,7 +1,15 @@
-# Pomodoro
+# Pomodoro App
 
-DONE 
+This is a front end project built as part of FreeCodeCamp's cirriculum. The website is for using a timer for working and taking breaks; the method is called the Pomodoro method. The settings are minimalistic in design. The user can pause, restart, and play the  pomodoro clock. 
 
-Current Issues:
-*The current pomodoro timer doesn't resume correctly because of how jQuery animations work. The issue is not very noticeable on times longer than 10 seconds, on the upside. 
+## Authors
 
+* **Nicolas Crumrine** - *EVERYTHING* - [CrumrineCoder](https://github.com/CrumrineCoder)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* My brother helped with the second revision of the design. I looked through r/freecodecamp for help with the redesign as well. 
