@@ -25,6 +25,8 @@ nav {
   font-family: "Circle", Verdana, Tahoma;
   text-align: center;
   vertical-align: middle;
+  position: fixed;
+  bottom: 0;
 }
 
 #nic {
