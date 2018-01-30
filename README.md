@@ -1,6 +1,8 @@
 # Pomodoro App
 
-This is a front end project built as part of FreeCodeCamp's cirriculum. The website is for using a timer for working and taking breaks; the method is called the Pomodoro method. The settings are minimalistic in design. The user can pause, restart, and play the  pomodoro clock. I use jQueryProgress to display the progress of the pomodoro. 
+This is a front end project built as part of FreeCodeCamp's cirriculum. The website is for using a timer for working and taking breaks; the method is called the Pomodoro method. The settings are minimalistic in design. The user can pause, restart, and play the  pomodoro clock. I use jQueryProgress to display the progress of the pomodoro. The app also uses jQueryProgress to display to the user the progress of the current Pomodoro the user is on.
+
+I learned about intervals for this one and about minimalistic design: initially I had a large amount of buttons, but I was able to streamline them into a UI design I like. I want to learn about sessions and be able to store a user's preferences.
 
 ## User Stories
 
