@@ -97,10 +97,18 @@ sessionButtons button:hover {
 #sessionButtons button{
 	font-size: 16px; 
 	padding: 5px 5% 5px 5%; 
+	border-radius: 5px; 
+}
+
+#sessionButtons button:hover{
+	background: #70060C;
+	cursor: pointer; 
+	-webkit-box-shadow:inset 0px 0px 0px 1px white;
+  -moz-box-shadow:inset 0px 0px 0px 1px white;
+  box-shadow:inset 0px 0px 0px 1px white;
 }
 
 /* Change Time Settings */
-
 
 #changeTimeContainer{
 	width: 308px; 
