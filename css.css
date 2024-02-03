@@ -48,6 +48,19 @@ button{
 	   font-family: 'Bellefair', serif; 
 	      text-decoration: none;
 }
+
+#changeTimerButtons{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+}
+
+#changeTimersButtons button{
+	flex: 1;
+	margin: 0 10px;
+}
+
 #sessionButtons button{
  background: #FF0E1B; 
 
@@ -75,7 +88,6 @@ sessionButtons button:hover {
 #pause, #reset, #play {
 	background: #70060C;
 	color: #FF0E1B; 
-	margin: 0 auto; 
 }
 
 #pause:hover, #reset:hover, #play:hover{
